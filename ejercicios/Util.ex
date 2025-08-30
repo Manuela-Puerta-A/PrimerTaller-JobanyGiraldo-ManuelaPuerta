@@ -21,21 +21,11 @@
         input(message, :float)
     end
   end
-
-  # =======================
-  # MÉTODOS CON JAVA (Swing)
-  # =======================
-  @doc """
-  Muestra un mensaje con un cuadro de diálogo de Java.
-  Requiere que la clase Mensaje.java esté compilada.
-  """
   def show_message_java(message) do
     System.cmd("java", ["-cp", ".", "InventarioLibreria.java", message])
   end
 
-  @doc """
-  Pide datos con un cuadro de diálogo de Java y devuelve el valor ingresado.
-  """
+
   def input_data(data) do
     System.cmd("java", ["-cp", ".", "InventarioLibreria.java", "input", data])
     |> elem(0)
