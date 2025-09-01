@@ -1,4 +1,5 @@
-package java;
+package ejercicio4;
+
 import javax.swing.JOptionPane;
 import java.io.*;
 public class SalarioEmpleado {

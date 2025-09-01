@@ -1,4 +1,5 @@
-package java;
+package ejercicio1;
+
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

@@ -1,4 +1,5 @@
-package java;
+package ejercicio3;
+
 import javax.swing.JOptionPane;
 import java.io.*;
 
