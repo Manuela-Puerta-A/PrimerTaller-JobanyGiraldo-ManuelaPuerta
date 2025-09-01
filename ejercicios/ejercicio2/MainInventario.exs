@@ -1,14 +1,22 @@
 defmodule MainInventario do
-   def main([titulo, unidades, precio]) do
-    u = String.to_integer(unidades)
-    p = String.to_float(precio)
-    total = u * p
-    IO.puts("El libro \"#{titulo}\" tiene #{u} unidades, con un valor total de $#{total}")
-  end
+     def main do
+    tituloLibro = Util.input_data("Ingrese el titulo del libro: ")
+    unidadesDispo = Util.input_data("Ingrese la cantidad de unidades disponibles: ")
+    precioUnitario = Util.input_data("Ingrese el precio unitario del libro: ")
 
-  def main(_args) do
-    IO.puts("Error: debes pasar título, unidades y precio")
+    unidadesDispo = String.to_integer(unidadesDispo)
+    precioUnitario = String.to_integer(precioUnitario)
+
+
+
+    valorTotal= unidadesDispo * precioUnitario
+
+    mensaje = "El titulo del libro es #{tituloLibro}, tiene #{unidadesDispo} unidades, con un valor total de #{valorTotal}"
+
+    Util.show_message(mensaje)
   end
 end
 
-MainInventario.main(System.argv())
+
+
+MainInventario.main()

@@ -4,10 +4,13 @@ defmodule MainConsumo do
     distancia = Util.input_data("Ingrese la distancia recorrida en km: ")
     litros = Util.input_data("Ingrese el consumo de combustible en litros: ")
 
-   
+
+
     distancia = String.to_float(distancia)
     litros = String.to_float(litros)
 
+
+    
     rendimiento = distancia / litros
 
     mensaje = "El nombre del conductor es #{nombre} y su rendimiento es #{Float.round(rendimiento, 2)} km/l"
