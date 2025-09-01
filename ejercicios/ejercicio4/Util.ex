@@ -5,7 +5,7 @@ defmodule Util do
 
   def show_message(message) do
     try do
-      System.cmd("java", ["-cp", ".", "SalarioEmpleado", message])
+      System.cmd("java", ["-cp", "ejercicio4", "SalarioEmpleado.java", message])
     rescue
       e in ArgumentError ->
         IO.puts("Error mostrando mensaje en Java: #{inspect(e)}")
@@ -15,7 +15,7 @@ defmodule Util do
 
   def input_data(prompt) do
     try do
-      {result, _} = System.cmd("java", ["-cp", ".", "SalarioEmpleado", "input", prompt])
+      {result, _} = System.cmd("java", ["-cp", "ejercicio4", "SalarioEmpleado.java", "input", prompt])
       String.trim(result)
     rescue
       e in ArgumentError ->
@@ -25,27 +25,25 @@ defmodule Util do
   end
 
 
-  def input(prompt, :string), do: IO.gets("#{prompt}: ") |> String.trim()
+  def input_data(prompt, :string), do: IO.gets("#{prompt}: ") |> String.trim()
 
-  def input(prompt, :integer) do
+  def input_data(prompt, :integer) do
     try do
-      input(prompt, :string) |> String.to_integer()
+      input_data(prompt, :string) |> String.to_integer()
     rescue
       ArgumentError ->
         IO.puts("Error: Input no es un entero válido.")
-        input(prompt, :integer)
+        input_data(prompt, :integer)
     end
   end
 
-  def input(prompt, :float) do
+  def input_data(prompt, :float) do
     try do
-      input(prompt, :string) |> String.to_float()
+      input_data(prompt, :string) |> String.to_float()
     rescue
       ArgumentError ->
         IO.puts("Error: Input no es un número real válido.")
-        input(prompt, :float)
+        input_data(prompt, :float)
     end
   end
-
-
 end

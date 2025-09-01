@@ -1,16 +1,19 @@
 defmodule MainSalario do
+  def main do
+    nombreEmpleado = Util.input_data("Ingrese el nombre del empleado: ")
+    salarioBase = Util.input_data("Ingrese el salario base de la persona: ")
+    horasExtrasTrabajadas = Util.input_data("Ingrese el numero de horas extras trabajadas: ")
 
- def main([nombre, base, extras]) do
-    base_f = String.to_float(base)
-    extras_i = String.to_integer(extras)
-    valor_hora = base_f / 160.0
-    total = base_f + extras_i * valor_hora * 1.5
-    IO.puts("El salario total de #{nombre} es de $#{Float.round(total,2)}")
-  end
+    salarioBase = String.to_float(salarioBase)
+    horasExtrasTrabajadas = String.to_float(horasExtrasTrabajadas)
 
-  def main(_args) do
-    IO.puts("Error: debes pasar nombre, base y horas extra")
+    valorHora = salarioBase / 240
+
+    salario_total = salarioBase + (horasExtrasTrabajadas * valorHora * 1.5)
+
+    mensaje = "El salario total de #{nombreEmpleado} es de $#{Float.round(salario_total, 2)}"
+    Util.show_message(mensaje)
   end
 end
 
-MainSalario.main(System.argv())
+MainSalario.main()

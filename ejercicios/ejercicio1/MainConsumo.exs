@@ -10,7 +10,7 @@ defmodule MainConsumo do
     litros = String.to_float(litros)
 
 
-    
+
     rendimiento = distancia / litros
 
     mensaje = "El nombre del conductor es #{nombre} y su rendimiento es #{Float.round(rendimiento, 2)} km/l"
