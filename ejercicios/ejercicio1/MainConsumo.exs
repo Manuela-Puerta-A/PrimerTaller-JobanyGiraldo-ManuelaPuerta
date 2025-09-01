@@ -1,16 +1,15 @@
 defmodule MainConsumo do
-  def main(args) do
-    case args do
-      [nombre, dist, litros] ->
-        distancia = String.to_float(dist)
-        litros_f = String.to_float(litros)
-        rendimiento = distancia / litros_f
-        IO.puts("#{nombre}, el rendimiento es #{Float.round(rendimiento, 2)} km/L")
+    def main do
+    nombre = Util.input("Ingrese el nombre del conductor: ", :string)
+    distancia = Util.input("Ingrese la distancia recorrida en km: ", :float)
+    consumo_litros = Util.input("Ingrese el consumo de combustible en litros: ", :float)
 
-      _ ->
-        IO.puts("Error: argumentos inválidos")
-    end
+    rendimiento = distancia / consumo_litros
+
+    mensaje = "El nombre del conductor es #{nombre} y su rendimiento es #{Float.round(rendimiento, 2)} km/l"
+
+    Util.show_message(mensaje)
   end
 end
 
-MainConsumo.main(System.argv())
+MainConsumo.main()

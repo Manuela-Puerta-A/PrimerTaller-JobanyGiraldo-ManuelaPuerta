@@ -5,7 +5,7 @@ defmodule Util do
 
   def show_message(message) do
     try do
-      System.cmd("java", ["-cp", ".", "Consumo", message])
+      System.cmd("java", ["-cp", "ejercicio1", "Consumo.java", message])
     rescue
       e in ArgumentError ->
         IO.puts("Error mostrando mensaje en Java: #{inspect(e)}")
@@ -15,7 +15,7 @@ defmodule Util do
 
   def input_data(prompt) do
     try do
-      {result, _} = System.cmd("java", ["-cp", ".", "Consumo", "input", prompt])
+      {result, _} = System.cmd("java", ["-cp", "ejercicio1", "Consumo.java", "input", prompt])
       String.trim(result)
     rescue
       e in ArgumentError ->
