@@ -1,4 +1,14 @@
 defmodule MainPeaje do
+  @moduledoc """
+  modulo principal para poder ejecutar y realizar las operaciones y la logica necesaria,
+  utilizando los datos traidos desde java
+  """
+    @doc """
+    funcion principal donde se extraen los inputs y se realiza la logica
+    -se piden datos de vehiculo como peso placa y tipo a traves de esto
+    se puede generar un case donde dependiendo del tipo genera una tarifa diferente
+    esto para un sistema de registro de vehiculos en un  peaje
+    """
 
 def main do
     placaVehiculo = Util.input_data("Ingrese la placa del vehiculo: ")

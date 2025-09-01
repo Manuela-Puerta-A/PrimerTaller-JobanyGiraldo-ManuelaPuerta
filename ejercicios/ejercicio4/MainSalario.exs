@@ -1,4 +1,13 @@
 defmodule MainSalario do
+  @moduledoc """
+  modulo principla para poder ejecutar y realizar las operaciones y la logica necesaria,
+  utilizando los datos traidos desde java
+  """
+    @doc """
+    funcion principal para realizar la logica se piden datos de
+    nombre de empleado salariobase y horas extras para realizar un sistema de calculo de salario de empleado
+    
+    """
   def main do
     nombreEmpleado = Util.input_data("Ingrese el nombre del empleado: ")
     salarioBase = Util.input_data("Ingrese el salario base de la persona: ")
