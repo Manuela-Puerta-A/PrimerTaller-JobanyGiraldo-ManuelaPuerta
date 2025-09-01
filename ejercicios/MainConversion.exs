@@ -1,12 +1,13 @@
 defmodule MainConversion do
-  def convertir(nombre, celsius) do
-    f = (celsius * 9/5) + 32
-    k = celsius + 273.15
-    "#{nombre}, la temperatura es: #{Float.round(f,1)} °F y #{Float.round(k,1)} K"
+    def main([nombre, celsius]) do
+    f = (String.to_float(celsius) * 9/5) + 32
+    k = String.to_float(celsius) + 273.15
+    IO.puts("#{nombre}, la temperatura es: #{Float.round(f,1)} °F y #{Float.round(k,1)} K")
+  end
+
+  def main(_args) do
+    IO.puts("Error: debes pasar nombre y celsius")
   end
 end
 
-[nombre, celsius] = System.argv()
-IO.puts ConversionTemp.convertir(nombre, String.to_float(celsius))
-
-MainConversion.main()
+MainConversion.main(System.argv())

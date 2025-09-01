@@ -1,12 +1,16 @@
 defmodule MainSalario do
 
-def calcular(nombre, base, extras) do
-    valor_hora = base / 160.0
-    total = base + extras * valor_hora * 1.5
-    "El salario total de #{nombre} es de $#{Float.round(total,2)}"
+ def main([nombre, base, extras]) do
+    base_f = String.to_float(base)
+    extras_i = String.to_integer(extras)
+    valor_hora = base_f / 160.0
+    total = base_f + extras_i * valor_hora * 1.5
+    IO.puts("El salario total de #{nombre} es de $#{Float.round(total,2)}")
+  end
+
+  def main(_args) do
+    IO.puts("Error: debes pasar nombre, base y horas extra")
   end
 end
 
-[nombre, base, extras] = System.argv()
-IO.puts Salario.calcular(nombre, String.to_float(base), String.to_integer(extras))
-MainSalario.main()
+MainSalario.main(System.argv())

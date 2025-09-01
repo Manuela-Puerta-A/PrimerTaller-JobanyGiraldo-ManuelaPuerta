@@ -13,8 +13,6 @@ public class Consumo {
             String litros = JOptionPane.showInputDialog("Litros consumidos:");
 
 
-          
-
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error: " + e.getMessage());
         }

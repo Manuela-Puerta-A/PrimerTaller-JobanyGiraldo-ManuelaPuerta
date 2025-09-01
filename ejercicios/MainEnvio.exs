@@ -1,16 +1,21 @@
 defmodule MainEnvio do
 
- def calcular(cliente, peso, tipo) do
+  def main([cliente, peso, tipo]) do
+    peso_f = String.to_float(peso)
+
     costo = cond do
-      tipo == "Económico" -> 5000 * peso
-      tipo == "Express" -> 8000 * peso
-      tipo == "Internacional" and peso <= 5 -> 15000 * peso
-      tipo == "Internacional" and peso > 5 -> 12000 * peso
+      tipo == "Económico" -> 5000 * peso_f
+      tipo == "Express" -> 8000 * peso_f
+      tipo == "Internacional" and peso_f <= 5 -> 15000 * peso_f
+      tipo == "Internacional" and peso_f > 5 -> 12000 * peso_f
     end
-    "#{cliente} debe pagar $#{costo} por el envío (#{tipo})"
+
+    IO.puts("#{cliente} debe pagar $#{costo} por el envío (#{tipo})")
+  end
+
+  def main(_args) do
+    IO.puts("Error: debes pasar cliente, peso y tipo")
   end
 end
 
-[cliente, peso, tipo] = System.argv()
-IO.puts Envio.calcular(cliente, String.to_float(peso), tipo)
-MainEnvio.main()
+MainEnvio.main(System.argv())

@@ -1,4 +1,5 @@
- def show_message(message), do: IO.puts(message)
+defmodule Util do
+  def show_message(message), do: IO.puts(message)
 
   def input(message, :string), do: IO.gets(message) |> String.trim()
 
@@ -21,4 +22,4 @@
         input(message, :float)
     end
   end
-
+end
