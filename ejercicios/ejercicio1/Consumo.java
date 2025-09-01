@@ -1,9 +1,5 @@
 package ejercicio1;
 
-
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-
 import javax.swing.JOptionPane;
 
 public class Consumo {

@@ -1,9 +1,5 @@
 package ejercicio5;
 
-
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-
 import javax.swing.JOptionPane;
 
 public class RegistroPeaje {

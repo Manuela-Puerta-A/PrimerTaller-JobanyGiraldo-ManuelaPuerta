@@ -1,7 +1,7 @@
 package ejercicio3;
 
 import javax.swing.JOptionPane;
-import java.io.*;
+
 
 public class ConversionTemperatura {
     public static void main(String[] args) {
