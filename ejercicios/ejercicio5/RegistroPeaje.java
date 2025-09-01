@@ -8,14 +8,14 @@ import javax.swing.JOptionPane;
 
 public class RegistroPeaje {
        public static void main(String[] args) {
-        try {
-            String placa = JOptionPane.showInputDialog("Placa:");
-            String tipo = JOptionPane.showInputDialog("Tipo (Carro/Moto/Camión):");
-            String peso = JOptionPane.showInputDialog("Peso (ton):");
-
-
-            } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error: " + e.getMessage());
+       if (args.length > 0 && args[0].equals("input")) {
+            String mensaje = args[1];
+            String input = JOptionPane.showInputDialog(null, mensaje);
+            System.out.println(input);
+        } else if (args.length > 0) {
+            JOptionPane.showMessageDialog(null, args[0]);
+        } else {
+            JOptionPane.showMessageDialog(null, "Mensaje no recibido");
         }
     }
     

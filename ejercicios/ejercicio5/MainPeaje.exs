@@ -1,22 +1,22 @@
 defmodule MainPeaje do
 
-def main([placa, tipo, peso]) do
-    peso_f = String.to_float(peso)
+def main do
+    placaVehiculo = Util.input_data("Ingrese la placa del vehiculo: ")
+    tipoVehiculo = Util.input_data("Ingrese el tipo de vehiculo: ")
+    pesoVehiculoTone = Util.input_data("Ingrese el peso del vehiuclo en toneladas: ")
 
-    tarifa =
-      case tipo do
-        "Carro" -> 10000
-        "Moto" -> 5000
-        "Camión" -> 20000 + trunc(peso_f) * 2000
+     tarifa =
+      case String.downcase(tipoVehiculo) do
+        "carro" -> 10_000
+        "moto" -> 5_000
+        "camion" -> 20_000+ (trunc(pesoVehiculoTone) * 2000)
+
         _ -> 0
       end
 
-    IO.puts("Vehículo #{placa} (#{tipo}) debe pagar $#{tarifa}")
-  end
-
-  def main(_args) do
-    IO.puts("Error: debes pasar placa, tipo y peso")
+    mensaje = "El vehiculo de placa #{placaVehiculo} tipo #{tipoVehiculo} debe pagar $#{tarifa}"
+    Util.show_message(mensaje)
   end
 end
 
-MainPeaje.main(System.argv())
+MainPeaje.main()
