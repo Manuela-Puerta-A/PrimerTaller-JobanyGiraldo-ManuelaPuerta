@@ -37,13 +37,13 @@ defmodule Util do
     end
   end
 
-  def input(prompt, :float) do
+  def input_data(prompt, :float) do
     try do
-      input(prompt, :string) |> String.to_float()
+      input_data(prompt, :string) |> String.to_float()
     rescue
       ArgumentError ->
         IO.puts("Error: Input no es un número real válido.")
-        input(prompt, :float)
+        input_data(prompt, :float)
     end
   end
 

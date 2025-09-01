@@ -8,10 +8,6 @@ import javax.swing.JOptionPane;
 
 public class Consumo {
      public static void main(String[] args) {
-        
-            String nombre = JOptionPane.showInputDialog("Nombre del conductor:");
-            String distancia = JOptionPane.showInputDialog("Distancia recorrida (km):");
-            String litros = JOptionPane.showInputDialog("Litros consumidos:");
 
             if (args.length > 0 && args[0].equals("input")) {
             String mensaje = args[1];

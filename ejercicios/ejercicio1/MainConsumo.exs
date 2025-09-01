@@ -1,10 +1,14 @@
 defmodule MainConsumo do
-    def main do
-    nombre = Util.input("Ingrese el nombre del conductor: ", :string)
-    distancia = Util.input("Ingrese la distancia recorrida en km: ", :float)
-    consumo_litros = Util.input("Ingrese el consumo de combustible en litros: ", :float)
+     def main do
+    nombre = Util.input_data("Ingrese el nombre del conductor: ")
+    distancia = Util.input_data("Ingrese la distancia recorrida en km: ")
+    litros = Util.input_data("Ingrese el consumo de combustible en litros: ")
 
-    rendimiento = distancia / consumo_litros
+   
+    distancia = String.to_float(distancia)
+    litros = String.to_float(litros)
+
+    rendimiento = distancia / litros
 
     mensaje = "El nombre del conductor es #{nombre} y su rendimiento es #{Float.round(rendimiento, 2)} km/l"
 
