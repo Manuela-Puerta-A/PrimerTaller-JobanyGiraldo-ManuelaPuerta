@@ -21,13 +21,4 @@
         input(message, :float)
     end
   end
-  def show_message_java(message) do
-    System.cmd("java", ["-cp", ".", "InventarioLibreria.java", message])
-  end
 
-
-  def input_data(data) do
-    System.cmd("java", ["-cp", ".", "InventarioLibreria.java", "input", data])
-    |> elem(0)
-    |> String.trim()
-  end

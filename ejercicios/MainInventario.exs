@@ -15,3 +15,4 @@ case args do
   _ ->
     IO.puts("Error: Debes pasar título, unidades y precio como argumentos.")
   end
+MainInventario.main()
